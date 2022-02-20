@@ -1,15 +1,18 @@
-﻿namespace WorldOfWarcraft
+﻿using WorldOfWarcraft.Models;
+
+namespace WorldOfWarcraft
 {
     public class Paladin : Character
     {
-        public Paladin(string name, int health, int level, int stamina, int strenghth, int intellect, Race race, int damage)
-             : base(name, health, level, stamina, strenghth, intellect, race, damage)
-        {
+        public override int Damage 
+        { 
+            get => base.Damage += Strenghth; 
+            set => base.Damage = value; 
         }
 
-        protected override void Attack(Entity entity)
+        public Paladin(string name, Race race, CharacterType characterType)
+             : base(name, race, characterType)
         {
-            entity.Health -= (Damage * Strenghth);
         }
     }
 }

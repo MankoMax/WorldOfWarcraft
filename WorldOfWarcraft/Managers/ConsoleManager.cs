@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using WorldOfWarcraft.Models;
 
 namespace WorldOfWarcraft.Managers
 {
@@ -13,13 +12,25 @@ namespace WorldOfWarcraft.Managers
         public string ShowMenu()
         {
             Clear();
-
+            Console.WriteLine("|YOUR ACCOUNT|\n");
             Console.WriteLine("1 - Create new Character");
-            Console.WriteLine("2 - Show all the Characters");
+            Console.WriteLine("2 - Choose a Character");
             Console.WriteLine("\n3 - Exit the Game");
 
             return GetDataFromUser("\nType the command and press Enter : > ");
         }
+
+        public string ShowGameMenu()
+        {
+            Clear();
+            Console.WriteLine("|WELCOME TO WORLD of WARCRAFT GAME|\n");
+            Console.WriteLine("1 - Create new Account");
+            Console.WriteLine("2 - Log-in");
+            Console.WriteLine("\n3 - Exit the Game");
+
+            return GetDataFromUser("\nType the command and press Enter : > ");
+        }
+
         public string GetDataFromUser(string messageToShow, bool shouldAddNewLine = false)
         {
             if (shouldAddNewLine)
@@ -34,6 +45,42 @@ namespace WorldOfWarcraft.Managers
             var userResult = Console.ReadLine();
 
             return userResult;
+        }
+
+        public void PrintMessage(string message)
+        {
+            Clear();
+
+            Console.WriteLine(message);
+            Console.ReadLine();
+        }
+
+        public void DisplayRaces(List<Race> races)
+        {
+            var types = races
+                .Select(item => item.ToString())
+                .ToList();
+
+            DisplayOrderedList(types);
+        }
+
+        public void DisplayClasses()
+        {
+            var types = Enum
+                .GetValues(typeof(CharacterType))
+                .Cast<CharacterType>()
+                .Select(item => item.ToString())
+                .ToList();
+
+            DisplayOrderedList(types);
+        }
+
+        private void DisplayOrderedList(List<string> items)
+        {
+            for (int i = 0; i < items.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}.{items[i]}");
+            }
         }
     }
 }

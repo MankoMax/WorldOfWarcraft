@@ -1,17 +1,20 @@
-﻿namespace WorldOfWarcraft
+﻿using Newtonsoft.Json;
+
+namespace WorldOfWarcraft
 {
     public abstract class Entity
     {
         public string Name { get; set; }
 
-        public int Health { get; set; }
+        public virtual int Health { get; set; }
 
         public int Level { get; set; }
 
         public Race Race { get; set; }
 
-        public int Damage { get; set; }
+        public virtual int Damage { get; set; }
 
+        [JsonIgnore]
         public bool IsAlive
         {
             get
@@ -20,16 +23,13 @@
             }
         }
 
-        protected Entity(string name, int health, int level, Race race, int damage)
+        protected Entity(string name, Race race)
         {
             Name = name;
-            Health = health;
-            Level = level;
             Race = race;
-            Damage = damage;
         }
 
-        protected virtual void Attack(Entity entity)
+        public virtual void Attack(Entity entity)
         {
             entity.Health -= Damage;
         }

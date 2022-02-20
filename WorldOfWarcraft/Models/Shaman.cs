@@ -2,14 +2,15 @@
 {
     public class Shaman : Character
     {
-        public Shaman(string name, int health, int level, int stamina, int strenghth, int intellect, Race race, int damage)
-            : base(name, health, level, stamina, strenghth, intellect, race, damage)
+        public override int Damage
         {
+            get => base.Damage += (Strenghth + Intellect) / 2;
+            set => base.Damage = value;
         }
 
-        protected override void Attack(Entity entity)
+        public Shaman(string name, Race race, CharacterType characterType)
+             : base(name, race, characterType)
         {
-            entity.Health -= (Damage * (Strenghth + Intellect)) / 2;
         }
     }
 }

@@ -7,6 +7,6 @@
         Tauren,
         Draenei,
         Dragon,
-        Beast
+        Beast,
     }
 }

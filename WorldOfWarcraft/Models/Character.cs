@@ -1,6 +1,8 @@
-﻿namespace WorldOfWarcraft
+﻿using WorldOfWarcraft.Models;
+
+namespace WorldOfWarcraft
 {
-    public abstract class Character : Entity
+    public class Character : Entity
     {
         public int Stamina { get; set; }
 
@@ -8,12 +10,26 @@
 
         public int Intellect { get; set; }
 
-        public Character(string name, int health, int level, int stamina, int strenghth, int intellect, Race race, int damage)
-            : base(name, health, level, race, damage)
+        public override int Health 
+        { 
+            get => base.Health += Stamina * 2; 
+            set => base.Health = value; 
+        }
+
+        public CharacterType CharacterType { get; set; }
+
+        public Character(string name, Race race, CharacterType characterType)
+            : base(name, race)
         {
-            Stamina = stamina;
-            Strenghth = strenghth;
-            Intellect = intellect;
+            CharacterType = characterType;
+        }
+
+        public override string ToString()
+        {
+            return  $"Class: {CharacterType} \nRace: {Race} \nName: {Name}" +
+                    $"\nLevel: {Level} \nHealth: {Health} " +
+                    $"\nStamina: {Stamina} \nStrenghth: {Strenghth} " +
+                    $"\nIntellect: {Intellect} \nDamage: {Damage}";
         }
     }
 }

@@ -2,14 +2,15 @@
 {
     public class Mage : Character
     {
-        public Mage(string name, int health, int level, int stamina, int strenghth, int intellect, Race race, int damage)
-            : base(name, health, level, stamina, strenghth, intellect, race, damage)
+        public override int Damage
         {
+            get => base.Damage += Intellect;
+            set => base.Damage = value;
         }
 
-        protected override void Attack(Entity entity)
+        public Mage(string name, Race race, CharacterType characterType)
+             : base(name, race, characterType)
         {
-            entity.Health -= (Damage * Intellect);
         }
     }
 }
