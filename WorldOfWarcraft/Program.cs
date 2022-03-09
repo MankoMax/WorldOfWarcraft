@@ -1,8 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.IO;
-using WorldOfWarcraft.Managers;
-using WorldOfWarcraft.Models;
+﻿using WorldOfWarcraft.Managers;
 
 namespace WorldOfWarcraft
 {

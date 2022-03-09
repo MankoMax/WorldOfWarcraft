@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using WorldOfWarcraft.Models;
-using WorldOfWarcraft.Repositories;
-using WorldOfWarcraft.Repository;
+using WorldofWarcraft.Models;
+using WorldofWarcraft.Repositories;
+using WorldofWarcraft.Repository;
 
-namespace WorldOfWarcraft.Managers
+namespace WorldofWarcraft.Managers
 {
     public class GameManager
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using WorldOfWarcraft.Models;
+using WorldofWarcraft.Models;
 
-namespace WorldOfWarcraft.Managers
+namespace WorldofWarcraft.Managers
 {
     public class ConsoleManager
     {
