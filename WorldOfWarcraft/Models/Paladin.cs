@@ -1,6 +1,6 @@
-﻿using WorldOfWarcraft.Models;
+﻿using WorldofWarcraft.Models;
 
-namespace WorldOfWarcraft
+namespace WorldofWarcraft
 {
     public class Paladin : Character
     {

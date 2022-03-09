@@ -1,4 +1,4 @@
-﻿namespace WorldofWarcraft.Models
+﻿namespace WorldOfWarcraft.Models
 {
     public class Stats
     {

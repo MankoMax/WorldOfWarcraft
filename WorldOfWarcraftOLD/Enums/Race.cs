@@ -1,4 +1,4 @@
-﻿namespace WorldofWarcraft
+﻿namespace WorldOfWarcraft
 {
     public enum Race
     {

@@ -1,4 +1,4 @@
-﻿namespace WorldOfWarcraft.Models
+﻿namespace WorldofWarcraft.Models
 {
     public class Shaman : Character
     {

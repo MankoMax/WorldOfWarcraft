@@ -1,6 +1,6 @@
-﻿using WorldOfWarcraft.Models;
+﻿using WorldofWarcraft.Models;
 
-namespace WorldOfWarcraft
+namespace WorldofWarcraft
 {
     public class Character : Entity
     {
@@ -26,10 +26,8 @@ namespace WorldOfWarcraft
 
         public override string ToString()
         {
-            return  $"Class: {CharacterType} \nRace: {Race} \nName: {Name}" +
-                    $"\nLevel: {Level} \nHealth: {Health} " +
-                    $"\nStamina: {Stamina} \nStrenghth: {Strenghth} " +
-                    $"\nIntellect: {Intellect} \nDamage: {Damage}";
+            return $"Class: {CharacterType} \nRace: {Race} \nName: {Name}" +
+                    $"\nLevel: {Level} \n";
         }
     }
 }

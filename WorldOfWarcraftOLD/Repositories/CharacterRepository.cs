@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace WorldofWarcraft.Repositories
+namespace WorldOfWarcraft.Repositories
 {
     public class CharacterRepository
     {

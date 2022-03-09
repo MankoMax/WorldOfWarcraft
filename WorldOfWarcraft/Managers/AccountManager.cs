@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using WorldOfWarcraft.Repositories;
+using WorldofWarcraft.Repositories;
 
-namespace WorldOfWarcraft.Managers
+namespace WorldofWarcraft.Managers
 {
     class AccountManager
     {
@@ -54,6 +54,11 @@ namespace WorldOfWarcraft.Managers
         {
             var path = AppDomain.CurrentDomain.BaseDirectory + @$"AccountBase\{accountId}.json";
             var charactersJson = File.ReadAllText(path);
+
+            if (string.IsNullOrEmpty(charactersJson))
+            {
+                return new List<Character>();
+            }
 
             return JsonConvert.DeserializeObject<List<Character>>(charactersJson);
         }

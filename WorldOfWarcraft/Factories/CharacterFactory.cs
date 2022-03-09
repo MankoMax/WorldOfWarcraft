@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using WorldOfWarcraft.Models;
+using WorldofWarcraft.Models;
 
-namespace WorldOfWarcraft.Repository
+namespace WorldofWarcraft.Repository
 {
     public class CharacterFactory
     {

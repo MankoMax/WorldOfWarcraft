@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace WorldOfWarcraft
+namespace WorldofWarcraft
 {
     public abstract class Entity
     {
