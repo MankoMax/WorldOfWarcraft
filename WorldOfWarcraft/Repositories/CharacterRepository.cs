@@ -28,5 +28,27 @@ namespace WorldofWarcraft.Repositories
 
             File.WriteAllText(path, serializedCharacters);
         }
+
+        public void DeleteCharacter(int index, Guid accountId)
+        {
+            var path = AppDomain.CurrentDomain.BaseDirectory + @$"AccountBase\{accountId}.json";
+            var charactersJson = File.ReadAllText(path);
+            var characterList = new List<Character>();
+
+            if (string.IsNullOrEmpty(charactersJson))
+            {
+                characterList = new List<Character>();
+            }
+            else
+            {
+                characterList = JsonConvert.DeserializeObject<List<Character>>(charactersJson);
+            }
+
+            characterList.RemoveAt(index);
+
+            var serializedCharacters = JsonConvert.SerializeObject(characterList);
+
+            File.WriteAllText(path, serializedCharacters);
+        }
     }
 }

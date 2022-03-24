@@ -44,27 +44,6 @@ namespace WorldofWarcraft.Repositories
 
             File.Create(AppDomain.CurrentDomain.BaseDirectory + @$"AccountBase\{account.Id}.json").Dispose();
         }
-
-        public bool Authenticate(string userName, string password)
-        {
-            var selectedUser = _accounts.Find(x => x.UserName == userName);
-
-            if (selectedUser == null)
-            {
-                return false;
-            }
-            else
-            {
-                if (selectedUser.Password == password)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
     }
 }
 

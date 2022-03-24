@@ -49,23 +49,5 @@ namespace WorldofWarcraft.Managers
         {
             _characterRepository.CreateCharacter(accountId, character);
         }
-
-        public List<Character> GetCharactersList(Guid accountId)
-        {
-            var path = AppDomain.CurrentDomain.BaseDirectory + @$"AccountBase\{accountId}.json";
-            var charactersJson = File.ReadAllText(path);
-
-            if (string.IsNullOrEmpty(charactersJson))
-            {
-                return new List<Character>();
-            }
-
-            return JsonConvert.DeserializeObject<List<Character>>(charactersJson);
-        }
-
-        public Character GetSelectedCharacter(List<Character> characterList, int index)
-        {
-            return characterList.ElementAt(index);
-        }
     }
 }

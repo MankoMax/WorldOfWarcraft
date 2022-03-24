@@ -7,8 +7,32 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\background.png" />
+    <None Remove="Images\BackgroundAccount.png" />
+    <None Remove="Images\logo.png" />
+    <None Remove="Images\magelogo.png" />
+    <None Remove="Images\paladinlogo.png" />
+    <None Remove="Images\shamanlogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\background.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\BackgroundAccount.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\logo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\magelogo.png" />
+    <Resource Include="Images\paladinlogo.png" />
+    <Resource Include="Images\shamanlogo.png" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,29 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System.Windows.Navigation;
 using WorldofWarcraft.Managers;
 using WorldofWarcraft.Repositories;
 
 namespace WorldofWarcraft
 {
-    public partial class AuthenticationWindow : Window
+    public partial class AuthPage : Page
     {
         private AccountManager _accountManager;
         private Account _loggedInAccount;
 
         public Account LoggedInAccount { get; set; }
 
-        public AuthenticationWindow(Account loggedInAccount)
+        public AuthPage(Account loggedInAccount)
         {
             InitializeComponent();
             _accountManager = new AccountManager();
@@ -56,11 +47,7 @@ namespace WorldofWarcraft
 
                     MessageBox.Show($"Account {login} is Logged In Successfully!");
 
-                    var accountWindow = new AccountWindow(_loggedInAccount);
-
-                    accountWindow.Show();
-
-                    Close();
+                    NavigationService.Navigate(new AccountPage(_loggedInAccount));
                 }
                 else
                 {
@@ -71,11 +58,7 @@ namespace WorldofWarcraft
 
         private void Button_Reg_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = new MainWindow();
-
-            mainWindow.Show();
-
-            Close();
+            NavigationService.Navigate(new RegPage());
         }
     }
 }
